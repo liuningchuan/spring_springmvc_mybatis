@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--groupId定义了项目属于哪个组，一般和项目所在的组织或公司存在关联-->
+    <groupId>com.liuning</groupId>
+    <!--artifactId定义了当前Maven项目在组中唯一的ID-->
+    <artifactId>spring_springmvc_mybatis</artifactId>
+    <!--packaging指定打包类型，pom表示该项目为聚合项目，不打包-->
+    <packaging>pom</packaging>
+    <!--version指定了项目当前的版本，SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定版本-->
+    <version>1.0-SNAPSHOT</version>
+
+    <!--用户可以通过在一个打包方式为pom的Maven项目中声明任意数量的module来实现模块的聚合-->
+    <!--在构建时，Maven按序读取POM，如果该POM没有依赖模块，那么就构建该模块，否则就先构建其依赖模块，
+        如果该依赖还依赖于其他模块，则进一步先构建依赖的依赖-->
+    <modules>
+        <module>Java_Exam</module>
+        <module>Jsp_Shopping</module>
+        <module>mybatisQuickStart</module>
+        <module>myServlet</module>
+        <module>springmvc_mybatisQuickStart</module>
+        <module>springmvcQuickStart</module>
+        <module>springQuickStart</module>
+        <module>ssmQuickStart</module>
+        <module>Tank</module>
+    </modules>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.0.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.0.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.0.7.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+        <!-- 必须要在tomcat下的lib包放一个jstl的jar包，不然会报错 -->
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
