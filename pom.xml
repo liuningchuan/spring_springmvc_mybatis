@@ -8,7 +8,7 @@
     <!--groupId定义了项目属于哪个组，一般和项目所在的组织或公司存在关联-->
     <groupId>com.liuning</groupId>
     <!--artifactId定义了当前Maven项目在组中唯一的ID-->
-    <artifactId>spring_springmvc_mybatis</artifactId>
+    <artifactId>spring-tutorial</artifactId>
     <!--packaging指定打包类型，pom表示该项目为聚合项目，不打包-->
     <packaging>pom</packaging>
     <!--version指定了项目当前的版本，SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定版本-->
@@ -18,16 +18,26 @@
     <!--在构建时，Maven按序读取POM，如果该POM没有依赖模块，那么就构建该模块，否则就先构建其依赖模块，
         如果该依赖还依赖于其他模块，则进一步先构建依赖的依赖-->
     <modules>
-        <module>Java_Exam</module>
-        <module>Jsp_Shopping</module>
-        <module>mybatisQuickStart</module>
-        <module>myServlet</module>
-        <module>springmvc_mybatisQuickStart</module>
-        <module>springmvcQuickStart</module>
-        <module>springQuickStart</module>
-        <module>ssmQuickStart</module>
-        <module>Tank</module>
+        <module>spring-tutorial-common</module>
+        <module>spring-tutorial-core</module>
+        <module>spring-tutorial-dao</module>
+        <module>spring-tutorial-dto</module>
+        <module>spring-tutorial-service</module>
+        <module>spring-tutorial-web</module>
     </modules>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <java.version>1.8</java.version>
+        <project.source.encoding>UTF-8</project.source.encoding>
+        <!--open-source-->
+        <spring.version>5.0.7.RELEASE</spring.version>
+        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
+        <!--plugins-->
+        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -36,6 +46,12 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
         </dependency>
 
         <!-- mybatis -->
@@ -83,5 +99,52 @@
 
 
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <!-- maven默认安装该插件，这里修改部分默认配置 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.source.encoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                </plugin>
+                <!--将源码deploy到仓库-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
