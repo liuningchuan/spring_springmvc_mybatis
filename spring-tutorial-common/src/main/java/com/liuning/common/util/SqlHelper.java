@@ -1,6 +1,6 @@
-package com.liuning.util;
+package com.liuning.common.util;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
