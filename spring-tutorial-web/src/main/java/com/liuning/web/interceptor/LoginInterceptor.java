@@ -1,4 +1,4 @@
-package com.liuning.interceptor;
+package com.liuning.web.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * @Description 登陆认证拦截器
  * @author	LiuNing
- * @date	2017-11-03下午13:45:47
+ * @date	2017-11-04下午13:45:47
  * @version 1.0
  */
 public class LoginInterceptor implements HandlerInterceptor {
@@ -23,20 +23,19 @@ public class LoginInterceptor implements HandlerInterceptor {
 		String url = request.getRequestURI();
 		//判断url是否是公开地址（实际使用时将公开地址配置配置文件中）
 		//这里公开地址是登陆提交的地址
-		if(url.indexOf("login.action") >= 0){
+		if(url.contains("login.action")){
 			//如果是进行登陆提交，放行(url中含有login.action则放行)
 			return true;
 		}
 		HttpSession session  = request.getSession();
 		//从session中取出用户身份信息
-		String username = (String) session.getAttribute("username");
-		if(username != null){
-			//身份存在，放行
-			return true;
-		}
+//		User user = (User) session.getAttribute("user");
+//		if(user != null){
+//			//身份存在，放行
+//			return true;
+//		}
 		//执行这里表示用户身份需要认证，跳转登陆页面
-		//request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-		response.sendRedirect("/springmvc_mybatisQuickStart/index.jsp");
+		request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		
 		//return false表示拦截，不向下执行
 		//return true表示放行
