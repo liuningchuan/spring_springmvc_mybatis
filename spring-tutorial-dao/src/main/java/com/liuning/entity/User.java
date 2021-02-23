@@ -1,4 +1,4 @@
-package com.liuning.pojo;
+package com.liuning.entity;
 
 import java.util.Date;
 

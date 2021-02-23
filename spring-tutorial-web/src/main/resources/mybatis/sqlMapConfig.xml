@@ -6,7 +6,7 @@
 <configuration>
 	
 	<typeAliases>
-		<package name="com.liuning.pojo"/>
+		<package name="com.liuning.entity"/>
 	</typeAliases>
 
 </configuration>

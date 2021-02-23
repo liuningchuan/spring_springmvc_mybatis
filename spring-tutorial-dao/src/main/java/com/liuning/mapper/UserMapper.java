@@ -3,8 +3,8 @@ package com.liuning.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import com.liuning.pojo.User;
-import com.liuning.pojo.UserExample;
+import com.liuning.entity.User;
+import com.liuning.entity.UserExample;
 
 public interface UserMapper {
     int countByExample(UserExample example);

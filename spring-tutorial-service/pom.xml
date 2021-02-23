@@ -5,11 +5,30 @@
     <parent>
         <artifactId>spring-tutorial</artifactId>
         <groupId>com.liuning</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-tutorial-service</artifactId>
     <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.liuning</groupId>
+            <artifactId>spring-tutorial-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.liuning</groupId>
+            <artifactId>spring-tutorial-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.liuning</groupId>
+            <artifactId>spring-tutorial-dto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.liuning</groupId>
+            <artifactId>spring-tutorial-dao</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
