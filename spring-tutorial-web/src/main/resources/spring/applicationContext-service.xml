@@ -5,9 +5,6 @@
 		">
 		
 	<!-- 用户管理的service -->
-	<bean id="userService"     class="com.liuning.service.impl.UserServiceImpl"	  />
-	<bean id="categoryService" class="com.liuning.service.impl.CategoryServiceImpl"/>
-	<bean id="productService"  class="com.liuning.service.impl.ProductServiceImpl" />
-	<bean id="ordersService"   class="com.liuning.service.impl.OrdersServiceImpl"  />
+	<bean id="userService" class="com.liuning.service.account.UserService"/>
 
 </beans>

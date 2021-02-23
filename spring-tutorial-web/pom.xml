@@ -15,9 +15,13 @@
     <dependencies>
         <dependency>
             <groupId>com.liuning</groupId>
-            <artifactId>spring-tutorial-dto</artifactId>
+            <artifactId>spring-tutorial-service</artifactId>
         </dependency>
         <!--spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -30,6 +34,35 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <finalName>spring-tutorial</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--maven-deploy-plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <!--deploy到远程仓库时忽略此模块-->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <!--maven-source-plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
