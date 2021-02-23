@@ -1,4 +1,4 @@
-package com.liuning.entity;
+package com.liuning.dao.entity;
 
 import java.util.ArrayList;
 import java.util.Date;

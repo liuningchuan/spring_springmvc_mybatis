@@ -1,10 +1,10 @@
-package com.liuning.mapper;
+package com.liuning.dao.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import com.liuning.entity.User;
-import com.liuning.entity.UserExample;
+import com.liuning.dao.entity.User;
+import com.liuning.dao.entity.UserExample;
 
 public interface UserMapper {
     int countByExample(UserExample example);
