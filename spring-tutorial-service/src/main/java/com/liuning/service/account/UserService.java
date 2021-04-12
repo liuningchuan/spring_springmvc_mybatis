@@ -8,4 +8,8 @@ package com.liuning.service.account;
  */
 public class UserService {
 
+    public String openAccount() {
+        return "SUCCESS";
+    }
+
 }
