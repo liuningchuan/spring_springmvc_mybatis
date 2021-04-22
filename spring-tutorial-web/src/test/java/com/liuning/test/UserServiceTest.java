@@ -3,6 +3,7 @@ package com.liuning.test;
 import com.liuning.service.account.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -19,5 +20,11 @@ public class UserServiceTest {
     public void openAccount() {
         String result = userService.openAccount();
         System.out.println(result);
+    }
+
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring/applicationContext-service.xml");
+        UserService userService = ctx.getBean(UserService.class);
+        System.out.println(userService.openAccount());
     }
 }
