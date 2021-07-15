@@ -24,6 +24,7 @@
         <module>spring-tutorial-dto</module>
         <module>spring-tutorial-service</module>
         <module>spring-tutorial-web</module>
+        <module>spring-tutorial-cache</module>
     </modules>
 
     <properties>
@@ -77,6 +78,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
