@@ -25,6 +25,7 @@
         <module>spring-tutorial-service</module>
         <module>spring-tutorial-web</module>
         <module>spring-tutorial-cache</module>
+        <module>spring-tutorial-netty</module>
     </modules>
 
     <properties>
@@ -71,6 +72,11 @@
             <dependency>
                 <groupId>com.liuning</groupId>
                 <artifactId>spring-tutorial-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuning</groupId>
+                <artifactId>spring-tutorial-cache</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--第三方依赖-->
@@ -142,6 +148,12 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <!--netty-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.66.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

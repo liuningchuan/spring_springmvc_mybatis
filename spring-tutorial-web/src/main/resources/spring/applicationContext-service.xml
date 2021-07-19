@@ -6,5 +6,8 @@
 		
 	<!-- 用户管理的service -->
 	<bean id="userService" class="com.liuning.service.account.UserService"/>
+	<bean id="memberService" class="com.liuning.cache.MemberService"/>
+
+	<bean id="cacheManager" class="org.springframework.cache.concurrent.ConcurrentMapCacheManager"/>
 
 </beans>

@@ -13,9 +13,14 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <!--本工程依赖-->
         <dependency>
             <groupId>com.liuning</groupId>
             <artifactId>spring-tutorial-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.liuning</groupId>
+            <artifactId>spring-tutorial-cache</artifactId>
         </dependency>
         <!--spring-->
         <dependency>

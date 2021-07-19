@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemberService {
 
-    @Cacheable("name")
+    @Cacheable(value = "name")
     public String getUserName() {
+
+        System.out.println("获取用户姓名");
         return "TOM";
     }
 }
